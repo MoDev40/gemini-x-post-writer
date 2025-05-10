@@ -1,6 +1,7 @@
 from dotenv import  load_dotenv
 import os
 import  google.generativeai as genai
+import  tweepy as x
 
 load_dotenv()
 
@@ -19,6 +20,10 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=GEMINI_API_KEY)
 ai = genai.GenerativeModel("gemini-2.0-flash")
 
+# setup x credentials
+x_auth = x.OAuthHandler(X_API_KEY, X_API_SECRET, X_ACCESS_TOKEN, X_ACCESS_SECRET)
+x_api = x.API(x_auth)
+
 
 def test():
     try:
@@ -26,6 +31,7 @@ def test():
         return response.text.strip()
     except Exception as e:
         return f"Error: {e}"
+
 
 
 if __name__ == "__main__":
