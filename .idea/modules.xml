@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ai-x-poster.iml" filepath="$PROJECT_DIR$/.idea/ai-x-poster.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/gemini-x-post-writer.iml" filepath="$PROJECT_DIR$/.idea/gemini-x-post-writer.iml" />
     </modules>
   </component>
 </project>

@@ -22,7 +22,7 @@ Generate clever, engaging, and potentially viral tweets using Google Gemini AI â
 
 1. **Clone the Repo**
    ```bash
-   git clone https://github.com/your-username/gemini-x-post-writer.git
+   git clone https://github.com/MoDev40/gemini-x-post-writer.git
    cd gemini-x-post-writer
    
 2. **Install Requirements**
