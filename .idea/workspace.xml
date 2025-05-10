@@ -225,11 +225,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1746871980943</updated>
-      <workItem from="1746871982079" duration="4518000" />
+      <workItem from="1746871982079" duration="5824000" />
     </task>
     <servers />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ai_x_poster$app.coverage" NAME="app Coverage Results" MODIFIED="1746876529911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ai_x_poster$app.coverage" NAME="app Coverage Results" MODIFIED="1746877926873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

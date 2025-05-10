@@ -25,11 +25,11 @@ x_auth = x.OAuthHandler(X_API_KEY, X_API_SECRET, X_ACCESS_TOKEN, X_ACCESS_SECRET
 x_api = x.API(x_auth)
 
 
-def ai_writter(ideas:str)->str:
+def ai_writter(topic:str)->str:
     # a prompt from gbt
     prompt = f"""You're an expert X (Twitter) content creator. 
     Write a tweet (max 280 characters) that is clever, engaging, and possibly viral.
-    Topic: "{idea}"
+    Topic: "{topic}"
     Include emojis and hashtags when helpful, but don't overuse."""
     try:
         response = ai.generate_content(prompt)
@@ -37,14 +37,28 @@ def ai_writter(ideas:str)->str:
     except Exception as e:
         return f"Error: {e}"
 
+def post_to_x(tweet:str)->None:
+    try:
+        x_api.update_status(tweet)
+        print("Tweet posted successfully!")
+    except Exception as e:
+        print(f"Failed to post tweet: {e}")
+
+
 EXIT_OPTIONS=['quit', 'exit','0']
 
 if __name__ == "__main__":
     while True:
         print(f"Exit options: {EXIT_OPTIONS} \n")
-        idea = input("What would idea like to write as an expert X? ")
-        if idea in EXIT_OPTIONS:
+        x_topic = input("What would topic like to write as an expert X? ")
+        if x_topic.strip().lower() in EXIT_OPTIONS:
             break
         else:
-            if idea.strip():
-                print(ai_writter(idea))
+            if x_topic.strip():
+                x_tweet = ai_writter(x_topic)
+                print(x_tweet) # Read and accept to tweet it
+                confirm = input("Do you want to post to X? (y/n) ").strip().lower()
+                if confirm == "y":
+                    post_to_x(x_tweet)
+            else:
+                print("No topic entered")
