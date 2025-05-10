@@ -25,14 +25,18 @@ x_auth = x.OAuthHandler(X_API_KEY, X_API_SECRET, X_ACCESS_TOKEN, X_ACCESS_SECRET
 x_api = x.API(x_auth)
 
 
-def test():
+def ai_writter(idea:str)->str:
+    # a prompt from gbt
+    prompt = f"""You're an expert X (Twitter) content creator. 
+    Write a tweet (max 280 characters) that is clever, engaging, and possibly viral.
+    Topic: "{idea}"
+    Include emojis and hashtags when helpful, but don't overuse."""
     try:
-        response = ai.generate_content("What is your name?")
+        response = ai.generate_content(prompt)
         return response.text.strip()
     except Exception as e:
         return f"Error: {e}"
 
 
-
 if __name__ == "__main__":
-    print(test())
+    print(ai_writter("jquery is dead")) # Response # jQuery is dead? 💀 Tell that to the thousands of websites still running on it. 🤫 Maybe it's just sleeping. 😴 #jQuery #JavaScript #WebDev #Frontend
